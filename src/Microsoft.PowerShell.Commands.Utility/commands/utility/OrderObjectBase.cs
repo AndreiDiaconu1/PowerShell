@@ -648,7 +648,8 @@ namespace Microsoft.PowerShell.Commands
             // we have to take into consideration that some vectors
             // might be shorter than others
             int order = 0;
-            for (int k = 0; k < _propertyComparers.Length; k++)
+            int len = _propertyComparers.Length;
+            for (int k = 0; k <= len; k++)
             {
                 ObjectCommandPropertyValue firstValue = (k < firstEntry.orderValues.Count) ?
                     firstEntry.orderValues[k] : ObjectCommandPropertyValue.NonExistingProperty;
